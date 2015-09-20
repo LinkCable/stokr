@@ -38,6 +38,9 @@ var Signup = React.createClass({
 
     sendClient: function (token) {
 
+        var submit = React.findDOMNode(this.refs.subscribe);
+        submit.innerText = "&#xf085;";
+
         console.log(token);
 
         var form = this;
@@ -65,7 +68,8 @@ var Signup = React.createClass({
                 type: 'POST',
                 data: registerInfo,
                 success: function(data) {
-                    console.log("success!" + data)
+                    console.log("success!" + data);
+                    submit.innerText = "&#xf00c;";
                 }.bind(this),
                 error: function(xhr, status, err) {
                     console.error(this.props.url, status, err.toString());
@@ -88,7 +92,7 @@ var Signup = React.createClass({
                 <form className="submission" onSubmit={this.handleSubmit}>
                     <div className="input-row">
                         <span>EMAIL</span>
-                        <input type="text" placeholder="&#xf003;" ref="email" />
+                        <input type="email" placeholder="&#xf003;" ref="email" />
                     </div>
                     <div className="input-row">
                         <span>PASSWORD</span>
@@ -104,13 +108,13 @@ var Signup = React.createClass({
                     </div>
                     <div className="input-row">
                         <span>CREDIT CARD NUMBER</span>
-                        <input type=""data-braintree-name="number" placeholder="&#xf09d;" ref="card" />
+                        <input type="number" size="16" data-braintree-name="number" placeholder="&#xf09d;" ref="card" />
                     </div>
                     <div className="input-row">
                         <span>EXPIRATION DATE</span>
-                        <input data-braintree-name="expiration_date" placeholder="&#xf273;" ref="expDate"/>
+                        <input type="month" data-braintree-name="expiration_date" placeholder="&#xf273;" ref="expDate"/>
                     </div>
-                    <input type="submit" className="submit" value="SUBSCRIBE" />
+                    <input type="submit" className="submit" value="SUBSCRIBE" ref="subscribe" />
                 </form>
             </div>
         );

@@ -22,7 +22,7 @@ var App = React.createClass({
             top = <Banner onClick={this.handleButtonClick} />;
         }
         else {
-            top = <Signup />;
+            top = <Signup onClick={this.signUp} />;
         }
     },
 
@@ -33,9 +33,14 @@ var App = React.createClass({
 
     componentWillUpdate: function() {
         if (this.state.page === "signup") {
-            top = <Signup />;
-            about.className = "hidden"
-            gaming.className = "hidden"
+            top = <Signup/>;
+
+            $( ".about" ).fadeOut( "slow", function() {
+                about.className = "hidden";
+            });
+            $( ".gaming" ).fadeOut( "slow", function() {
+                gaming.className = "hidden";
+            });
         }
         if (this.state.page === "home") {
             top = <Banner />;
@@ -54,11 +59,15 @@ var App = React.createClass({
         }
     },
 
+    signUp: function(e) {
+      top.className = "sign-completed";
+    },
+
     render: function() {
         return (
             <div className="app">
                 {top}
-                <Gaming />
+                <Gaming ref="gaming" />
                 <About ref="about" onClick={this.handleButtonClick} />
             </div>
         );

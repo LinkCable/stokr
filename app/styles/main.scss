@@ -27,29 +27,32 @@ $icon-font-path: "../fonts/";
 
 @keyframes rotate-games {
     0% {
-        background-image: url(../images/fallout.jpg);
+        background: url(../images/fallout.jpg) no-repeat center center fixed;;
     }
     20% {
-        background-image: url(../images/skyrim.jpg);
+        background: url(../images/skyrim.jpg) no-repeat center center fixed;;
     }
     40% {
-        background-image: url(../images/gtav.jpg);
+        background: url(../images/gtav.jpg) no-repeat center center fixed;;
     }
     60% {
-        background-image: url(../images/farcry.jpg);
+        background: url(../images/farcry.jpg) no-repeat center center fixed;;
     }
     78% {
-        background-image: url(../images/minesweeper.jpg);
+        background: url(../images/minesweeper.jpg) no-repeat center center fixed;;
     }
     90% {
-        background-image: url(../images/bioshock.jpg);
+        background: url(../images/bioshock.jpg) no-repeat center center fixed;;
     }
     100% {
-        background-image: url(../images/fallout.jpg);
+        background: url(../images/fallout.jpg) no-repeat center center fixed;;
     }
 }
 
-
+@keyframes fade-out {
+    0%    { opacity: 1; }
+    100%  { opacity: 0; }
+}
 
 .browsehappy {
     margin: 0.2em 0;
@@ -63,6 +66,7 @@ $icon-font-path: "../fonts/";
     width: 100%;
 
     .hidden {
+        animation: fade-out 2s;
         display: none;
     }
 }
@@ -280,6 +284,7 @@ $icon-font-path: "../fonts/";
         display: flex;
         flex-direction: column;
         font-family: "Hurme Geometric Bold";
+        margin-top: 5vh;
 
         .input-row {
 
@@ -315,6 +320,7 @@ $icon-font-path: "../fonts/";
             font-family: "Hurme Geometric Bold";
             margin-top: 5vh;
             background: rgba(104,60,161,0.7);
+            border: none;
         }
     }
 }
