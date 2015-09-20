@@ -26,10 +26,10 @@ render: function() {
         </div>
         <h1>WHAT'S THE CATCH?</h1>
         <div className="copy">
-            Unfortunately, servers aren't free. &#9785; However, they are pretty cheap! For a small monthly
-        fee, you'll be able to play your Steam games anywhere on any OSX machine. We think it's worth
-        the trade off. If you don't trust us, test out our free trial! We promise once you've played
-        Skyrim on the go, you'll never want to ditch us.
+            Unfortunately, servers aren't free. &#9785; However, they are pretty cheap! For just a dollar
+            an hour, you'll be able to play your Steam games anywhere on any OSX machine. We think it's worth
+            the trade off. If you don't trust us, test out our free trial! We promise, once you've played
+            Skyrim on the go, you'll never want to be without it.
         </div>
         <div className="try">
             <span onClick={this.props.onClick} className="signup">SIGN ME UP</span>

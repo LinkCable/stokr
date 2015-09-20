@@ -4,10 +4,12 @@ var React = window.React = require('react'),
 
 import Banner from './ui/banner.jsx';
 import About from './ui/about.jsx';
+import Gaming from './ui/gaming.jsx';
 import Signup from './ui/signup.jsx';
 
 var top;
 var about;
+var gaming;
 
 var App = React.createClass({
 
@@ -26,11 +28,18 @@ var App = React.createClass({
 
     componentDidMount: function() {
         about= React.findDOMNode(this.refs.about);
+        gaming= React.findDOMNode(this.refs.gaming);
     },
 
     componentWillUpdate: function() {
         if (this.state.page === "signup") {
             top = <Signup />;
+            about.className = "hidden"
+            gaming.className = "hidden"
+        }
+        if (this.state.page === "home") {
+            top = <Banner />;
+            about.className = "about";
         }
     },
 
@@ -49,6 +58,7 @@ var App = React.createClass({
         return (
             <div className="app">
                 {top}
+                <Gaming />
                 <About ref="about" onClick={this.handleButtonClick} />
             </div>
         );

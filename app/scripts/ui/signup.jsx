@@ -29,7 +29,7 @@ var Signup = React.createClass({
                 form.sendClient(data);
             },
             error: function(xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
+                console.error(status, err.toString());
             }.bind(this),
         });
 
@@ -52,11 +52,11 @@ var Signup = React.createClass({
         }, function (err, nonce) { //succeed, pass on nonce
 
             var registerInfo = {
-                "username" : React.findDOMNode(form.refs.email).value.trim(),
-                "password" : React.findDOMNode(form.refs.password).value.trim(),
-                "steamID" :  React.findDOMNode(form.refs.sID).value.trim(),
-                "steamPassWord" :  React.findDOMNode(form.refs.sPassword).value.trim(),
-                "nonce" : nonce
+                "Email" : React.findDOMNode(form.refs.email).value.trim(),
+                "Password" : React.findDOMNode(form.refs.password).value.trim(),
+                "SteamUser" :  React.findDOMNode(form.refs.sID).value.trim(),
+                "SteamPassword" :  React.findDOMNode(form.refs.sPassword).value.trim(),
+                "BraintreeNonce" : nonce
             };
 
             $.ajax({
@@ -78,19 +78,39 @@ var Signup = React.createClass({
     render: function() {
         return (
             <div className="signup-form">
+
                 <h1>SO YOU'RE INTERESTED?
                     <br/>
                     AWESOME
                 </h1>
-                <span>Just fill out the form below.</span>
-                <form id="register-form" onSubmit={this.handleSubmit()}>
-                    <input type="text" placeholder="email" ref="email" />
-                    <input type="password" placeholder="password" ref="password" />
-                    <input type="text" placeholder="SteamID" ref="sID" />
-                    <input type="password" placeholder="password" ref="sPassword" />
-                    <input data-braintree-name="number" placeholder="card number" ref="card" />
-                    <input data-braintree-name="expiration_date" placeholder="00/00" ref="expDate"/>
-                    <input type="submit" value="Subscribe" />
+
+                <span className="prompt">Just fill out the form below.</span>
+                <form className="submission" onSubmit={this.handleSubmit}>
+                    <div className="input-row">
+                        <span>EMAIL</span>
+                        <input type="text" placeholder="&#xf003;" ref="email" />
+                    </div>
+                    <div className="input-row">
+                        <span>PASSWORD</span>
+                        <input type="password" placeholder="&#xf084;" ref="password" />
+                    </div>
+                    <div className="input-row">
+                        <span>STEAM ID</span>
+                        <input type="text" placeholder="&#xf1b6;" ref="sID" />
+                    </div>
+                    <div className="input-row">
+                        <span>STEAM PASSWORD</span>
+                        <input type="password" placeholder="&#xf084;" ref="sPassword" />
+                    </div>
+                    <div className="input-row">
+                        <span>CREDIT CARD NUMBER</span>
+                        <input type=""data-braintree-name="number" placeholder="&#xf09d;" ref="card" />
+                    </div>
+                    <div className="input-row">
+                        <span>EXPIRATION DATE</span>
+                        <input data-braintree-name="expiration_date" placeholder="&#xf273;" ref="expDate"/>
+                    </div>
+                    <input type="submit" className="submit" value="SUBSCRIBE" />
                 </form>
             </div>
         );

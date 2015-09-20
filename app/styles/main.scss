@@ -24,6 +24,33 @@ $icon-font-path: "../fonts/";
     url('../fonts/hurme_geometric_oblique/hurme_geometric_oblique.ttf') format('truetype');
 }
 
+
+@keyframes rotate-games {
+    0% {
+        background-image: url(../images/fallout.jpg);
+    }
+    20% {
+        background-image: url(../images/skyrim.jpg);
+    }
+    40% {
+        background-image: url(../images/gtav.jpg);
+    }
+    60% {
+        background-image: url(../images/farcry.jpg);
+    }
+    78% {
+        background-image: url(../images/minesweeper.jpg);
+    }
+    90% {
+        background-image: url(../images/bioshock.jpg);
+    }
+    100% {
+        background-image: url(../images/fallout.jpg);
+    }
+}
+
+
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -43,7 +70,7 @@ $icon-font-path: "../fonts/";
 .banner {
     width: 100vw;
     height: 100vh;
-    background: url(../images/mac.png) no-repeat center center fixed;
+    background: url(../images/mac.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -125,6 +152,44 @@ $icon-font-path: "../fonts/";
 
 }
 
+.gaming {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    animation: rotate-games 20s linear infinite;
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+
+    i {
+        position: absolute;
+        top: 0;
+        font-size: 36px;
+        width: 100vw;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3vh;
+    }
+
+    .tagline {
+        font-family: "Hurme Geometric Bold";
+        font-size: 36px;
+        width: 100%;
+        color: #000;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .about {
     height: 100vh;
     width: 100vw;
@@ -186,9 +251,71 @@ $icon-font-path: "../fonts/";
 .signup-form {
     height: 100vh;
     width: 100vw;
+    padding-top: 5vh;
 
     h1 {
-        margin: 0;
+        width: 70vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Hurme Geometric Bold";
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .prompt {
+        font-family: "Hurme Geometric Sans";
+        width: 60vw;
+        font-size: 24px;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        text-align: center;
+    }
+
+    .submission {
+        width: 60vw;
+        font-size: 24px;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        font-family: "Hurme Geometric Bold";
+
+        .input-row {
+
+            display: block;
+            display: flex;
+            flex-direction: row;
+
+            span {
+                text-align: left;
+                width: 30vw;
+            }
+
+            input {
+                width: 30vw;
+                alignment: left;
+                display: inline-block;
+                outline: none;
+                margin-left: auto;
+                margin-right: auto;
+                font-family: FontAwesome;
+                border-top: 0;
+                border-right: 0;
+                border-left: 0;
+                background: none;
+
+            }
+        }
+
+        .submit {
+            width: 30vw;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: "Hurme Geometric Bold";
+            margin-top: 5vh;
+            background: rgba(104,60,161,0.7);
+        }
     }
 }
 
