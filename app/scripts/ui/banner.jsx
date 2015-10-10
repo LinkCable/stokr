@@ -18,9 +18,6 @@ var Banner = React.createClass({
                         <br />
                         anywhere, anytime, on OSX
                     </div>
-                    <div className="register" onClick={this.props.onClick}>
-                        <span  className="signup">SIGN UP</span>
-                    </div>
                 </div>
                 <div className="borderlands">
                     Borderlands, 2K Games

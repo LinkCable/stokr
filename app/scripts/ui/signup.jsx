@@ -20,8 +20,8 @@ var Signup = React.createClass({
         var form = this;
         var clientToken;
         $.ajax({
-            url: 'http://icestream.co/api/clientToken/',
-            type: 'GET',
+            url: 'http://stokr.co/api/clientToken/',
+            type: 'POST',
             dataType: 'text',
             async: true,
             success: function(data) {
@@ -39,7 +39,8 @@ var Signup = React.createClass({
     sendClient: function (token) {
 
         var submit = React.findDOMNode(this.refs.subscribe);
-        submit.innerText = "&#xf085;";
+        submit.innerHTML = "";
+        submit.className = "fa fa-spin";
 
         console.log(token);
 
@@ -63,15 +64,18 @@ var Signup = React.createClass({
             };
 
             $.ajax({
-                url: "http://icestream.co/api/register",
+                url: "http://stokr.co/api/register",
                 dataType: 'json',
                 type: 'POST',
                 data: registerInfo,
                 success: function(data) {
                     console.log("success!" + data);
-                    submit.innerText = "&#xf00c;";
+                    submit.className = "fa";
+                    submit.innerHTML = "";
                 }.bind(this),
                 error: function(xhr, status, err) {
+                    submit.className = "fa";
+                    submit.innerHTML = "";
                     console.error(this.props.url, status, err.toString());
                 }.bind(this)
             });
@@ -89,7 +93,7 @@ var Signup = React.createClass({
                 </h1>
 
                 <span className="prompt">Just fill out the form below.</span>
-                <form className="submission" onSubmit={this.handleSubmit}>
+                <form className="submission" onSubmit={this.handleSubmit} id="register">
                     <div className="input-row">
                         <span>EMAIL</span>
                         <input type="email" placeholder="&#xf003;" ref="email" />
@@ -112,10 +116,11 @@ var Signup = React.createClass({
                     </div>
                     <div className="input-row">
                         <span>EXPIRATION DATE</span>
-                        <input type="month" data-braintree-name="expiration_date" placeholder="&#xf273;" ref="expDate"/>
+                        <input type="text" data-braintree-name="expiration_date" placeholder="&#xf273;" ref="expDate"/>
                     </div>
-                    <input type="submit" className="submit" value="SUBSCRIBE" ref="subscribe" />
                 </form>
+                <button type="submit" form="register" className="submit" value="Submit">
+                    <span ref="subscribe">Submit</span></button>
             </div>
         );
     }

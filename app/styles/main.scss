@@ -82,8 +82,8 @@ $icon-font-path: "../fonts/";
 
     .middle {
         position: relative;
-        top: 40%;
-        transform: translateY(-40%);
+        top: 50%;
+        transform: translateY(-50%);
 
         .logo {
             margin-left: auto;
@@ -313,14 +313,22 @@ $icon-font-path: "../fonts/";
             }
         }
 
-        .submit {
-            width: 30vw;
-            margin-left: auto;
-            margin-right: auto;
-            font-family: "Hurme Geometric Bold";
-            margin-top: 5vh;
-            background: rgba(104,60,161,0.7);
-            border: none;
+
+    }
+
+    .submit {
+        width: 30vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: FontAwesome, "Hurme Geometric Bold";
+        display: block;
+        margin-top: 5vh;
+        background: rgba(104,60,161,0.7);
+        border: none;
+        font-size: 24px;
+
+        .submitting {
+            animation: fa-spin 2s infinite linear;
         }
     }
 }
