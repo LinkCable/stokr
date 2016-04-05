@@ -1,5 +1,5 @@
 # stokr
-## [See this project on Devpost](http://www.devpost.com/stokr)
+## [See this project on Devpost](http://www.devpost.com/software/stokr)
 
 The front-end site for stokr, a hack submitted to [Hack the North 2015](http://hackthenorth2015.devpost.com/) that ended up placing in the Top 10 and winning the hackathon!
 
