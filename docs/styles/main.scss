@@ -1,0 +1,339 @@
+$icon-font-path: "../fonts/";
+
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "font-awesome/scss/font-awesome";
+
+@font-face {
+    font-family: 'Hurme Geometric Sans';
+    src: url('../fonts/hurme_geometric_sans/hurme_geometric_sans.woff2') format('woff2'),
+    url('../fonts/hurme_geometric_sans/hurme_geometric_sans.woff') format('woff'),
+    url('../fonts/hurme_geometric_sans/hurme_geometric_sans.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hurme Geometric Bold';
+    src: url('../fonts/hurme_geometric_bold/hurme_geometric_bold.woff2') format('woff2'),
+    url('../fonts/hurme_geometric_bold/hurme_geometric_bold.woff') format('woff'),
+    url('../fonts/hurme_geometric_bold/hurme_geometric_bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hurme Geometric Oblique';
+    src: url('../fonts/hurme_geometric_oblique/hurme_geometric_oblique.woff2') format('woff2'),
+    url('../fonts/hurme_geometric_oblique/hurme_geometric_oblique.woff') format('woff'),
+    url('../fonts/hurme_geometric_oblique/hurme_geometric_oblique.ttf') format('truetype');
+}
+
+
+@keyframes rotate-games {
+    0% {
+        background: url(../images/fallout.jpg) no-repeat center center fixed;;
+    }
+    20% {
+        background: url(../images/skyrim.jpg) no-repeat center center fixed;;
+    }
+    40% {
+        background: url(../images/gtav.jpg) no-repeat center center fixed;;
+    }
+    60% {
+        background: url(../images/farcry.jpg) no-repeat center center fixed;;
+    }
+    78% {
+        background: url(../images/minesweeper.jpg) no-repeat center center fixed;;
+    }
+    90% {
+        background: url(../images/bioshock.jpg) no-repeat center center fixed;;
+    }
+    100% {
+        background: url(../images/fallout.jpg) no-repeat center center fixed;;
+    }
+}
+
+@keyframes fade-out {
+    0%    { opacity: 1; }
+    100%  { opacity: 0; }
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.app{
+    height: 100%;
+    width: 100%;
+
+    .hidden {
+        animation: fade-out 2s;
+        display: none;
+    }
+}
+
+.banner {
+    width: 100vw;
+    height: 100vh;
+    background: url(../images/mac.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    .middle {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .logo {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 20vw;
+        }
+
+        .subtitle {
+            font-family: "Hurme Geometric Oblique";
+            margin-top: 2vh;
+            width: 100vw;
+            text-align: center;
+            color: #fff;
+            font-size: 36px;
+        }
+
+        .register {
+            margin-top: 2vh;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            vertical-align: center;
+            font-family: "Hurme Geometric Bold";
+            color: #fff;
+            width: 20vw;
+            font-size: 36px;
+            background: rgba(40,103,161,0.7);
+
+            span {
+                display: block;
+                padding-top: 6px;
+            }
+        }
+        .register:hover {
+            cursor: pointer;
+        }
+    }
+
+    .borderlands {
+        font-family: "Hurme Geometric Sans";
+        position: absolute;
+        bottom: 0vh;
+        right: 1vh;
+        color: #fff;
+    }
+
+    .more {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        font-family: "Hurme Geometric Sans";
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+        bottom: 0vh;
+
+        span {
+            margin-bottom: 0;
+        }
+
+        .scroll {
+            font-size: 12px;
+            display: block;
+            margin-bottom: 1vh;
+        }
+    }
+
+}
+
+.gaming {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    animation: rotate-games 20s linear infinite;
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+
+    i {
+        position: absolute;
+        top: 0;
+        font-size: 36px;
+        width: 100vw;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3vh;
+    }
+
+    .tagline {
+        font-family: "Hurme Geometric Bold";
+        font-size: 36px;
+        width: 100%;
+        color: #000;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.about {
+    height: 100vh;
+    width: 100vw;
+    background: white;
+    padding-top: 3vh;
+    position: relative;
+
+    h1{
+
+        font-family: "Hurme Geometric Bold";
+        text-align: center;
+    }
+
+    .copy {
+        width: 70vw;
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Hurme Geometric Sans";
+    }
+
+    .try {
+        margin-top: 3vh;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Hurme Geometric Bold";
+        text-align: center;
+        width: 30vw;
+        font-size: 36px;
+        background: rgba(40,103,161,0.7);
+
+        span {
+            display: block;
+            padding-top: 6px;
+        }
+    }
+
+    .try:hover{
+        cursor: pointer;
+    }
+
+    .footer {
+        position: absolute;
+        font-family: "Hurme Geometric Sans";
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 12px;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 1vh;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.signup-form {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 5vh;
+
+    h1 {
+        width: 70vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Hurme Geometric Bold";
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .prompt {
+        font-family: "Hurme Geometric Sans";
+        width: 60vw;
+        font-size: 24px;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        text-align: center;
+    }
+
+    .submission {
+        width: 60vw;
+        font-size: 24px;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        font-family: "Hurme Geometric Bold";
+        margin-top: 5vh;
+
+        .input-row {
+
+            display: block;
+            display: flex;
+            flex-direction: row;
+
+            span {
+                text-align: left;
+                width: 30vw;
+            }
+
+            input {
+                width: 30vw;
+                alignment: left;
+                display: inline-block;
+                outline: none;
+                margin-left: auto;
+                margin-right: auto;
+                font-family: FontAwesome;
+                border-top: 0;
+                border-right: 0;
+                border-left: 0;
+                background: none;
+
+            }
+        }
+
+
+    }
+
+    .submit {
+        width: 30vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: FontAwesome, "Hurme Geometric Bold";
+        display: block;
+        margin-top: 5vh;
+        background: rgba(104,60,161,0.7);
+        border: none;
+        font-size: 24px;
+
+        .submitting {
+            animation: fa-spin 2s infinite linear;
+        }
+    }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+
+}
