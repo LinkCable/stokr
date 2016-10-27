@@ -12,7 +12,7 @@ var Banner = React.createClass({
             <div className="banner">
 
                 <div className="middle">
-                    <img className="logo" src="../images/stokr_grey.svg" />
+                    <img className="logo" src="images/stokr_grey.svg" />
                     <div className="subtitle">
                         your entire steam library:
                         <br />

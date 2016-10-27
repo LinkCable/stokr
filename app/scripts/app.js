@@ -2,10 +2,10 @@
 var React = window.React = require('react'),
     mountNode = document.getElementById("app");
 
-import Banner from './ui/banner.jsx';
-import About from './ui/about.jsx';
-import Gaming from './ui/gaming.jsx';
-import Signup from './ui/signup.jsx';
+var Banner = require('./ui/banner.jsx');
+var About = require('./ui/about.jsx');
+var Gaming = require('./ui/gaming.jsx');
+var Signup = require('./ui/signup.jsx');
 
 var top;
 var about;
@@ -76,4 +76,3 @@ var App = React.createClass({
 
 
 React.render(<App />, mountNode);
-
